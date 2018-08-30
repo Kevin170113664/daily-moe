@@ -1,0 +1,41 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "这里是每日萌娘的API文档",
+    "version": "1.0.0",
+    "title": "Daily Moe"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "tags": [
+    {
+      "name": "Picture",
+      "description": "Everything about moe pictures"
+    }
+  ],
+  "paths": {
+    "/sample": {
+      "get": {
+        "tags": [
+          "Picture"
+        ],
+        "summary": "Get a sample moe picture",
+        "description": "Get your first moe picture here, have fun!",
+        "produces": [
+          "image/gif"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    }
+  }
+}

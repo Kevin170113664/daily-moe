@@ -7,4 +7,4 @@ router.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, '../public/images/sample.gif'))
 });
 
-module.exports = router
+export default router

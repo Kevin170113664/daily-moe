@@ -3,22 +3,23 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "babel-node ./bin/www",
-    "dev": "nodemon --exec babel-node --presets env,stage-2 ./bin/www"
+    "start": "node ./dist/bin/www",
+    "build": "babel ./ -D --out-dir dist --ignore ./node_modules,./package.json,./dist,./yarn.lock",
+    "dev": "nodemon --exec babel-node ./bin/www"
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "lodash": "^4.17.10",
     "morgan": "~1.9.0",
-    "nodemon": "^1.18.4",
     "pug": "2.0.0-beta11",
     "swagger-ui-express": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-cli": "^6.26.0",
+    "nodemon": "^1.18.4"
   }
 }

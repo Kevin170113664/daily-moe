@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/ping', express.Router().get('/', (req, res, next) => res.send('pong')))
 app.use('/sample', sampleRouter)
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customSiteTitle: 'Daily Moe API' }));
 
 app.use((req, res, next) => next(createError(404)))
 
@@ -31,4 +31,4 @@ app.use((err, req, res, next) => {
   res.render('error')
 })
 
-module.exports = app
+export default app
