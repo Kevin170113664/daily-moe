@@ -6,8 +6,8 @@
     "title": "Daily Moe"
   },
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],
   "tags": [
     {
