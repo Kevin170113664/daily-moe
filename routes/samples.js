@@ -1,9 +1,10 @@
+import path from 'path'
 import express from 'express'
 
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-  res.send('respond with a resource')
+  res.sendFile(path.join(__dirname, '../public/images/sample.gif'))
 });
 
 module.exports = router
