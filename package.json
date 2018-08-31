@@ -9,7 +9,7 @@
     "test": "jest"
   },
   "engines": {
-    "node": "10.4.1"
+    "node": "10.6.0"
   },
   "dependencies": {
     "axios": "^0.18.0",
