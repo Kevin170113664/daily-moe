@@ -1,16 +1,18 @@
 {
-  "name": "myapp",
+  "name": "daily-moe",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./dist/bin/www",
     "build": "babel ./ -D --out-dir dist --ignore ./node_modules,./package.json,./dist,./yarn.lock",
-    "dev": "nodemon --exec babel-node ./bin/www"
+    "dev": "nodemon --exec babel-node ./bin/www",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.18.0",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
+    "jest": "^23.5.0",
     "lodash": "^4.17.10",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
@@ -18,8 +20,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "babel-preset-env": "^1.7.0",
     "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "nodemon": "^1.18.4"
   }
 }
