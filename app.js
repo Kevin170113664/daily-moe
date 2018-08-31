@@ -4,7 +4,6 @@ import express from 'express'
 import createError from 'http-errors'
 import swaggerUi from 'swagger-ui-express'
 
-import sampleRouter from './routes/samples'
 import bandoriRouter from './routes/bandori'
 import swaggerDocument from './swagger.json'
 
@@ -19,9 +18,8 @@ app.use(express.urlencoded({extended: false}))
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/ping', express.Router().get('/', (req, res, next) => res.send('pong')))
-app.use('/sample', sampleRouter)
 app.use('/api/bandori', bandoriRouter)
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customSiteTitle: 'Daily Moe API' }));
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customSiteTitle: 'Daily Moe API' }))
 
 app.use((req, res, next) => next(createError(404)))
 
