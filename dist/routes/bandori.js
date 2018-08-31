@@ -16,9 +16,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const router = _express2.default.Router();
 
-router.get('/cards', async (req, res, next) => {
+router.get('/artCards', async (req, res, next) => {
   try {
-    const cards = await _bandori2.default.getLatestCards();
+    const cards = await _bandori2.default.getArtPictures();
     return res.json(cards);
   } catch (e) {
     next(e);

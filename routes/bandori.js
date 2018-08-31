@@ -3,9 +3,9 @@ import bandori from '../service/bandori'
 
 const router = express.Router()
 
-router.get('/cards', async (req, res, next) => {
+router.get('/artCards', async (req, res, next) => {
   try {
-    const cards = await bandori.getLatestCards()
+    const cards = await bandori.getArtPictures()
     return res.json(cards)
   } catch(e) {
     next(e)

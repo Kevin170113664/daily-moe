@@ -16,7 +16,7 @@
     }
   ],
   "paths": {
-    "/api/bandori/cards": {
+    "/api/bandori/artCards": {
       "get": {
         "tags": [
           "Bandori"
