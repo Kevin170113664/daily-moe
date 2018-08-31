@@ -11,20 +11,20 @@
   ],
   "tags": [
     {
-      "name": "Picture",
-      "description": "Everything about moe pictures"
+      "name": "Bandori",
+      "description": "APIs to interact with pictures in BanG Dream!"
     }
   ],
   "paths": {
-    "/sample": {
+    "/api/bandori/cards": {
       "get": {
         "tags": [
-          "Picture"
+          "Bandori"
         ],
-        "summary": "Get a sample moe picture",
-        "description": "Get your first moe picture here, have fun!",
+        "summary": "Get all art pictures",
+        "description": "Get all art pictures, both original and trained",
         "produces": [
-          "image/gif"
+          "application/json"
         ],
         "parameters": [],
         "responses": {

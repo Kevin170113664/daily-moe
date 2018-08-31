@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./dist/bin/www",
-    "build": "babel ./ -D --out-dir dist --ignore ./node_modules,./package.json,./dist,./yarn.lock",
+    "build": "babel ./ -D --out-dir dist --ignore ./node_modules,./package.json,./dist,./yarn.lock,./test",
     "dev": "nodemon --exec babel-node ./bin/www",
     "test": "jest"
   },
