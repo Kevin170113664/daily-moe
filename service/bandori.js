@@ -3,7 +3,7 @@ import _ from 'lodash'
 import path from 'path'
 import shortid from 'shortid'
 import r from '../helper/request'
-import bandoriStaticData from '../static/bandori/bandori-art-cards'
+import bandoriStaticData from '../static/bandori-art-cards'
 
 const baseUrl = 'https://bandori.party/api'
 
@@ -24,7 +24,7 @@ const getArtPictures = async () => {
   }))
 
   if (_.values(artPicture).length > _.values(bandoriStaticData).length) {
-    fs.writeFileSync(path.join(__dirname, '../static/bandori/bandori-art-cards.json'), JSON.stringify(artPicture))
+    fs.writeFileSync(path.join(__dirname, '../static/bandori-art-cards.json'), JSON.stringify(artPicture))
   }
 
   return artPicture

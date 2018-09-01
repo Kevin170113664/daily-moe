@@ -5,8 +5,8 @@ const router = express.Router()
 
 router.get('/cleanCards', async (req, res, next) => {
   try {
-    const card = await lovelive.getCleanCards()
-    return res.json(card)
+    const result = await lovelive.getCleanCards()
+    return res.json(result)
   } catch(e) {
     next(e)
   }

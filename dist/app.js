@@ -24,9 +24,17 @@ var _swaggerUiExpress = require('swagger-ui-express');
 
 var _swaggerUiExpress2 = _interopRequireDefault(_swaggerUiExpress);
 
+var _public = require('./routes/public');
+
+var _public2 = _interopRequireDefault(_public);
+
 var _bandori = require('./routes/bandori');
 
 var _bandori2 = _interopRequireDefault(_bandori);
+
+var _lovelive = require('./routes/lovelive');
+
+var _lovelive2 = _interopRequireDefault(_lovelive);
 
 var _swagger = require('./swagger.json');
 
@@ -45,7 +53,9 @@ app.use(_express2.default.urlencoded({ extended: false }));
 app.use(_express2.default.static(_path2.default.join(__dirname, 'public')));
 
 app.use('/ping', _express2.default.Router().get('/', (req, res, next) => res.send('pong')));
+app.use('/api/public', _public2.default);
 app.use('/api/bandori', _bandori2.default);
+app.use('/api/lovelive', _lovelive2.default);
 app.use('/', _swaggerUiExpress2.default.serve, _swaggerUiExpress2.default.setup(_swagger2.default, { customSiteTitle: 'Daily Moe API' }));
 
 app.use((req, res, next) => next((0, _httpErrors2.default)(404)));

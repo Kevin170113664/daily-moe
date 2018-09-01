@@ -3,7 +3,7 @@ import _ from 'lodash'
 import path from 'path';
 import shortid from 'shortid'
 import r from '../helper/request'
-import loveliveStaticData from '../static/lovelive/lovelive-clean-cards';
+import loveliveStaticData from '../static/lovelive-clean-cards';
 
 const baseUrl = 'https://schoolido.lu/api'
 
@@ -22,7 +22,7 @@ const getCleanCards = async () => {
   }))
 
   if (_.values(cleanPicture).length > _.values(loveliveStaticData).length) {
-    const staticJSONPath = path.join(__dirname, '../static/lovelive/lovelive-clean-cards.json');
+    const staticJSONPath = path.join(__dirname, '../static/lovelive-clean-cards.json');
     fs.writeFileSync(staticJSONPath, JSON.stringify(loveliveStaticData))
   }
 

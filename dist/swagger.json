@@ -11,8 +11,16 @@
   ],
   "tags": [
     {
+      "name": "Public",
+      "description": "APIs to interact with all pictures"
+    },
+    {
       "name": "Bandori",
       "description": "APIs to interact with pictures in BanG Dream!"
+    },
+    {
+      "name": "LoveLive",
+      "description": "APIs to interact with pictures in LoveLive Project!"
     }
   ],
   "paths": {
@@ -22,7 +30,28 @@
           "Bandori"
         ],
         "summary": "Get all art pictures",
-        "description": "Get all art pictures, both original and trained",
+        "description": "Get all art pictures, both original and trained. And update bandori static json",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/api/lovelive/cleanCards": {
+      "get": {
+        "tags": [
+          "LoveLive"
+        ],
+        "summary": "Get all clean card pictures",
+        "description": "Get all clean card  pictures, both original and idolized.  And update lovelive static json",
         "produces": [
           "application/json"
         ],
@@ -41,6 +70,51 @@
       "post": {
         "tags": [
           "Bandori"
+        ],
+        "summary": "Get random pictures in bandori repo",
+        "description": "Get random pictures exclude existing picture ids in bandori repo",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "pageSize",
+            "description": "How many picture do you want",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "example": 20
+            }
+          },
+          {
+            "name": "existingIds",
+            "in": "body",
+            "description": "Tell me what you have now",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": []
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/api/public/randomCards": {
+      "post": {
+        "tags": [
+          "Public"
         ],
         "summary": "Get random pictures",
         "description": "Get random pictures exclude existing picture ids",
