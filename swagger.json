@@ -26,7 +26,7 @@
           "Bandori"
         ],
         "summary": "Get all art pictures",
-        "description": "Get all art pictures, both original and trained",
+        "description": "Get all art pictures, both original and trained. And update bandori static json",
         "produces": [
           "application/json"
         ],
@@ -47,7 +47,7 @@
           "LoveLive"
         ],
         "summary": "Get all clean card pictures",
-        "description": "Get all clean card  pictures, both original and idolized",
+        "description": "Get all clean card  pictures, both original and idolized.  And update lovelive static json",
         "produces": [
           "application/json"
         ],

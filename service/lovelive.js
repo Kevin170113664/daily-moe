@@ -1,6 +1,9 @@
+import fs from 'fs';
 import _ from 'lodash'
+import path from 'path';
 import shortid from 'shortid'
 import r from '../helper/request'
+import loveliveStaticData from '../static/lovelive/lovelive-clean-cards';
 
 const baseUrl = 'https://schoolido.lu/api'
 
@@ -17,6 +20,10 @@ const getCleanCards = async () => {
       if (!_.isEmpty(result.clean_ur_idolized)) cleanPicture[shortid.generate()] = `https:${result.clean_ur_idolized}`
     })
   }))
+
+  if (_.values(cleanPicture).length > _.values(loveliveStaticData).length) {
+    fs.writeFileSync(path.join(__dirname, '../static/bandori/lovelive-clean-cards'), JSON.stringify(loveliveStaticData))
+  }
 
   return cleanPicture
 }
