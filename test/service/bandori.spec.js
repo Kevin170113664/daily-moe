@@ -5,7 +5,7 @@ import artPictures from '../test-data/art-cards'
 describe('bandori api', () => {
   test('should be able to get all art cards', async () => {
     const picture = await bandori.getArtPictures()
-    expect(Object.values(picture)).toEqual(artPictures);
+    expect(_.difference(_.values(picture), artPictures)).toEqual([]);
   }, 10000);
 
   describe('get random pictures', () => {

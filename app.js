@@ -5,6 +5,7 @@ import createError from 'http-errors'
 import swaggerUi from 'swagger-ui-express'
 
 import bandoriRouter from './routes/bandori'
+import loveliveRouter from './routes/lovelive'
 import swaggerDocument from './swagger.json'
 
 const app = express()
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/ping', express.Router().get('/', (req, res, next) => res.send('pong')))
 app.use('/api/bandori', bandoriRouter)
+app.use('/api/lovelive', loveliveRouter)
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { customSiteTitle: 'Daily Moe API' }))
 
 app.use((req, res, next) => next(createError(404)))

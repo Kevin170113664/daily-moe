@@ -13,6 +13,10 @@
     {
       "name": "Bandori",
       "description": "APIs to interact with pictures in BanG Dream!"
+    },
+    {
+      "name": "LoveLive",
+      "description": "APIs to interact with pictures in LoveLive Project!"
     }
   ],
   "paths": {
@@ -23,6 +27,27 @@
         ],
         "summary": "Get all art pictures",
         "description": "Get all art pictures, both original and trained",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/api/lovelive/cleanCards": {
+      "get": {
+        "tags": [
+          "LoveLive"
+        ],
+        "summary": "Get all clean card pictures",
+        "description": "Get all clean card  pictures, both original and idolized",
         "produces": [
           "application/json"
         ],

@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import shortid from 'shortid'
 import r from '../helper/request'
-import artPictureData from '../static/bandori/art-pictures'
+import artPictureData from '../static/bandori/bandori-art-cards'
 
 const baseUrl = 'https://bandori.party/api'
 
