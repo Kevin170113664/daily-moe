@@ -18,8 +18,18 @@ const router = _express2.default.Router();
 
 router.get('/artCards', async (req, res, next) => {
   try {
-    const cards = await _bandori2.default.getArtPictures();
-    return res.json(cards);
+    const card = await _bandori2.default.getArtPictures();
+    return res.json(card);
+  } catch (e) {
+    next(e);
+  }
+});
+
+router.get('/randomCards', async (req, res, next) => {
+  try {
+    const { pageSize, existingIds } = req.query;
+    const card = await _bandori2.default.getRandomPictures({ pageSize, existingIds });
+    return res.json(card);
   } catch (e) {
     next(e);
   }
