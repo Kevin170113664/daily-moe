@@ -12,9 +12,10 @@ router.get('/artCards', async (req, res, next) => {
   }
 })
 
-router.get('/randomCards', async (req, res, next) => {
+router.post('/randomCards', async (req, res, next) => {
   try {
-    const {pageSize, existingIds} = req.query;
+    const {pageSize} = req.query
+    const {existingIds} = req.body;
     const card = await bandori.getRandomPictures({pageSize, existingIds})
     return res.json(card)
   } catch(e) {

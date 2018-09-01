@@ -38,7 +38,7 @@
       }
     },
     "/api/bandori/randomCards": {
-      "get": {
+      "post": {
         "tags": [
           "Bandori"
         ],
@@ -60,9 +60,9 @@
             }
           },
           {
-            "in": "query",
-            "description": "Tell me what you have already",
             "name": "existingIds",
+            "in": "body",
+            "description": "Tell me what you have now",
             "schema": {
               "type": "array",
               "items": {
