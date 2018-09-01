@@ -22,7 +22,8 @@ const getCleanCards = async () => {
   }))
 
   if (_.values(cleanPicture).length > _.values(loveliveStaticData).length) {
-    fs.writeFileSync(path.join(__dirname, '../static/bandori/lovelive-clean-cards'), JSON.stringify(loveliveStaticData))
+    const staticJSONPath = path.join(__dirname, '../static/lovelive/lovelive-clean-cards.json');
+    fs.writeFileSync(staticJSONPath, JSON.stringify(loveliveStaticData))
   }
 
   return cleanPicture
