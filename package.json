@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./dist/src/bin/www",
-    "build": "babel ./ -D --out-dir dist --ignore ./node_modules,./package.json,./dist,./yarn.lock,./test",
-    "dev": "nodemon --exec babel-node --presets babel-preset-env,babel-preset-stage-0 ./bin/www",
+    "start": "babel-node server.js",
+    "build": "webpack --config webpack.config.js --mode production",
+    "dev": "nodemon --exec babel-node --presets babel-preset-env,babel-preset-stage-0 server.js",
     "test": "jest"
   },
   "engines": {
@@ -23,10 +23,28 @@
     "swagger-ui-express": "^4.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
     "@babel/core": "^7.0.0",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-loader": "^8.0.1",
+    "nodemon": "^1.18.4",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0"
   }
 }
