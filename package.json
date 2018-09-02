@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "babel-node server.js",
-    "build": "webpack --config webpack.config.js --mode production",
-    "dev": "nodemon --exec babel-node --presets @babel/preset-env server.js",
+    "start": "babel-node ./dist/server.js",
+    "build": "babel ./src -D --out-dir dist --ignore ./node_modules,./package.json,./dist,./yarn.lock,./test",
+    "dev": "nodemon --exec babel-node --presets @babel/preset-env ./src/server.js",
     "test": "jest"
   },
   "engines": {
@@ -23,6 +23,7 @@
     "swagger-ui-express": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.0.0",

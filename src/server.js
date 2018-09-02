@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 import http from 'http'
-import app from './src/app'
-import {normalizePort, onError} from './src/helper/start-up-helper'
+import app from './app'
+import {normalizePort, onError} from './helper/start-up-helper'
 
 const defaultPort = '3000';
 const port = normalizePort(process.env.PORT || defaultPort)
