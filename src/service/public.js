@@ -1,12 +1,13 @@
 import _ from 'lodash'
 import bandoriStaticData from '../static/bandori-art-cards'
 import loveliveStaticData from '../static/lovelive-clean-cards'
+import cinderellaStaticData from '../static/cinderella-spread-cards'
 
 const getRandomPictures = async ({pageSize, existingIds = []}) => {
   pageSize = parseInt(pageSize)
   if (!_.isFinite(pageSize) || pageSize < 1) pageSize = 20
 
-  const allStaticData = {...bandoriStaticData, ...loveliveStaticData}
+  const allStaticData = {...bandoriStaticData, ...loveliveStaticData, ...cinderellaStaticData}
   const randomKeys = _.chain(allStaticData)
     .keys()
     .difference(existingIds)

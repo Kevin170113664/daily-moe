@@ -23,7 +23,7 @@ const getCleanCards = async () => {
 
   if (_.values(cleanPicture).length > _.values(loveliveStaticData).length) {
     const staticJSONPath = path.join(__dirname, '../static/lovelive-clean-cards.json');
-    fs.writeFileSync(staticJSONPath, JSON.stringify(loveliveStaticData))
+    fs.writeFileSync(staticJSONPath, JSON.stringify(cleanPicture))
   }
 
   return cleanPicture

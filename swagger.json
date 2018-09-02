@@ -21,6 +21,10 @@
     {
       "name": "LoveLive",
       "description": "APIs to interact with pictures in LoveLive Project!"
+    },
+    {
+      "name": "Cinderella",
+      "description": "APIs to interact with pictures in Cinderella Girls Starlight Stage!"
     }
   ],
   "paths": {
@@ -52,6 +56,27 @@
         ],
         "summary": "Get all clean card pictures",
         "description": "Get all clean card  pictures, both original and idolized.  And update lovelive static json",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "500": {
+            "description": "internal server error"
+          }
+        }
+      }
+    },
+    "/api/cinderella/spreadCards": {
+      "get": {
+        "tags": [
+          "Cinderella"
+        ],
+        "summary": "Get all spread card pictures",
+        "description": "Get all spread card  pictures. And update cinderella static json",
         "produces": [
           "application/json"
         ],
