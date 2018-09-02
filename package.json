@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "babel-node ./dist/server.js",
+    "start": "node ./dist/server.js",
     "build": "babel ./src -D --out-dir dist --ignore ./node_modules,./package.json,./dist,./yarn.lock,./test",
     "dev": "nodemon --exec babel-node --presets @babel/preset-env ./src/server.js",
     "test": "jest"
@@ -12,6 +12,7 @@
     "node": ">=10.6.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "axios": "^0.18.0",
     "babel-core": "^7.0.0-0",
     "express": "~4.16.0",

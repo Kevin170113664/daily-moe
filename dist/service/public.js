@@ -19,41 +19,19 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+var getRandomPictures = function getRandomPictures(_ref) {
+  var pageSize = _ref.pageSize,
+      _ref$existingIds = _ref.existingIds,
+      existingIds = _ref$existingIds === void 0 ? [] : _ref$existingIds;
+  pageSize = parseInt(pageSize);
+  if (!_lodash.default.isFinite(pageSize) || pageSize < 1) pageSize = 20;
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+  var allStaticData = _objectSpread({}, _bandoriArtCards.default, _loveliveCleanCards.default, _cinderellaSpreadCards.default);
 
-var getRandomPictures =
-/*#__PURE__*/
-function () {
-  var _ref2 = _asyncToGenerator(
-  /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee(_ref) {
-    var pageSize, _ref$existingIds, existingIds, allStaticData, randomKeys;
+  var randomKeys = _lodash.default.chain(allStaticData).keys().difference(existingIds).shuffle().slice(0, pageSize).value();
 
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            pageSize = _ref.pageSize, _ref$existingIds = _ref.existingIds, existingIds = _ref$existingIds === void 0 ? [] : _ref$existingIds;
-            pageSize = parseInt(pageSize);
-            if (!_lodash.default.isFinite(pageSize) || pageSize < 1) pageSize = 20;
-            allStaticData = _objectSpread({}, _bandoriArtCards.default, _loveliveCleanCards.default, _cinderellaSpreadCards.default);
-            randomKeys = _lodash.default.chain(allStaticData).keys().difference(existingIds).shuffle().slice(0, pageSize).value();
-            return _context.abrupt("return", _lodash.default.pick(allStaticData, randomKeys));
-
-          case 6:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee, this);
-  }));
-
-  return function getRandomPictures(_x) {
-    return _ref2.apply(this, arguments);
-  };
-}();
+  return _lodash.default.pick(allStaticData, randomKeys);
+};
 
 var _default = {
   getRandomPictures: getRandomPictures

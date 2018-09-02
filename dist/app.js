@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _path = _interopRequireDefault(require("path"));
 
+require("@babel/polyfill");
+
 var _morgan = _interopRequireDefault(require("morgan"));
 
 var _express = _interopRequireDefault(require("express"));
