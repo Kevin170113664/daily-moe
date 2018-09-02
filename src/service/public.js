@@ -3,7 +3,8 @@ import bandoriStaticData from '../static/bandori-art-cards'
 import loveliveStaticData from '../static/lovelive-clean-cards'
 
 const getRandomPictures = async ({pageSize, existingIds = []}) => {
-  if (!_.isFinite(pageSize) || pageSize < 1) pageSize = 20;
+  pageSize = parseInt(pageSize)
+  if (!_.isFinite(pageSize) || pageSize < 1) pageSize = 20
 
   const allStaticData = {...bandoriStaticData, ...loveliveStaticData}
   const randomKeys = _.chain(allStaticData)

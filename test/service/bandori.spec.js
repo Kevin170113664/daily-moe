@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import bandori from '../../service/bandori'
+import bandori from '../../src/service/bandori'
 import artPictures from '../test-data/art-cards'
 
 describe('bandori api', () => {
@@ -10,8 +10,8 @@ describe('bandori api', () => {
 
   describe('get random pictures', () => {
     test('should be able to get pictures according to page size from static json', async () => {
-      const picture = await bandori.getRandomPictures({pageSize: 20})
-      expect(_.values(picture)).toHaveLength(20)
+      const picture = await bandori.getRandomPictures({pageSize: "5"})
+      expect(_.values(picture)).toHaveLength(5)
     });
 
     test('should be able to get pictures exclude exiting picture ids', async () => {

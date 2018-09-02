@@ -31,7 +31,8 @@ const getArtPictures = async () => {
 }
 
 const getRandomPictures = async ({pageSize, existingIds = []}) => {
-  if (!_.isFinite(pageSize) || pageSize < 1) pageSize = 20;
+  pageSize = parseInt(pageSize)
+  if (!_.isFinite(pageSize) || pageSize < 1) pageSize = 20
 
   const randomKeys = _.chain(bandoriStaticData)
     .keys()

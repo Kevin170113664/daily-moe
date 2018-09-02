@@ -7,7 +7,7 @@ import swaggerUi from 'swagger-ui-express'
 import publicRouter from './routes/public'
 import bandoriRouter from './routes/bandori'
 import loveliveRouter from './routes/lovelive'
-import swaggerDocument from './swagger.json'
+import swaggerDocument from '../swagger.json'
 
 const app = express()
 

@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import lovelive from '../../service/lovelive'
+import lovelive from '../../src/service/lovelive'
 import cleanCards from '../test-data/clean-cards'
 
 describe('lovelive api', () => {
