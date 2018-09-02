@@ -84,7 +84,7 @@ function () {
             if (_lodash.default.values(cleanPicture).length > _lodash.default.values(_loveliveCleanCards.default).length) {
               staticJSONPath = _path.default.join(__dirname, '../static/lovelive-clean-cards.json');
 
-              _fs.default.writeFileSync(staticJSONPath, JSON.stringify(_loveliveCleanCards.default));
+              _fs.default.writeFileSync(staticJSONPath, JSON.stringify(cleanPicture));
             }
 
             return _context2.abrupt("return", cleanPicture);

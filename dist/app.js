@@ -21,6 +21,8 @@ var _bandori = _interopRequireDefault(require("./routes/bandori"));
 
 var _lovelive = _interopRequireDefault(require("./routes/lovelive"));
 
+var _cinderella = _interopRequireDefault(require("./routes/cinderella"));
+
 var _swagger = _interopRequireDefault(require("../swagger.json"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -40,6 +42,7 @@ app.use('/ping', _express.default.Router().get('/', function (req, res, next) {
 app.use('/api/public', _public.default);
 app.use('/api/bandori', _bandori.default);
 app.use('/api/lovelive', _lovelive.default);
+app.use('/api/cinderella', _cinderella.default);
 app.use('/', _swaggerUiExpress.default.serve, _swaggerUiExpress.default.setup(_swagger.default, {
   customSiteTitle: 'Daily Moe API'
 }));
