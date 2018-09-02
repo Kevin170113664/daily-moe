@@ -24,6 +24,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 const getRandomPictures = (() => {
   var _ref = _asyncToGenerator(function* ({ pageSize, existingIds = [] }) {
+    pageSize = parseInt(pageSize);
     if (!_lodash2.default.isFinite(pageSize) || pageSize < 1) pageSize = 20;
 
     const allStaticData = _extends({}, _bandoriArtCards2.default, _loveliveCleanCards2.default);

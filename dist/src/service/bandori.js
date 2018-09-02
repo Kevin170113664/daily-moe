@@ -71,6 +71,7 @@ const getArtPictures = (() => {
 
 const getRandomPictures = (() => {
   var _ref3 = _asyncToGenerator(function* ({ pageSize, existingIds = [] }) {
+    pageSize = parseInt(pageSize);
     if (!_lodash2.default.isFinite(pageSize) || pageSize < 1) pageSize = 20;
 
     const randomKeys = _lodash2.default.chain(_bandoriArtCards2.default).keys().difference(existingIds).shuffle().slice(0, pageSize).value();

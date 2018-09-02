@@ -36,7 +36,7 @@ var _lovelive = require('./routes/lovelive');
 
 var _lovelive2 = _interopRequireDefault(_lovelive);
 
-var _swagger = require('./swagger.json');
+var _swagger = require('../swagger.json');
 
 var _swagger2 = _interopRequireDefault(_swagger);
 

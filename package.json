@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./dist/bin/www",
+    "start": "node ./dist/src/bin/www",
     "build": "babel ./ -D --out-dir dist --ignore ./node_modules,./package.json,./dist,./yarn.lock,./test",
     "dev": "nodemon --exec babel-node --presets babel-preset-env,babel-preset-stage-0 ./bin/www",
     "test": "jest"
