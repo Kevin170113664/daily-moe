@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./dist/server.js",
-    "webpack": "webpack --mode production",
-    "build": "babel ./src -D --out-dir dist --ignore ./node_modules,./package.json,./dist,./yarn.lock,./test",
+    "build": "babel ./src/server.js -D --out-dir dist && webpack --mode production",
     "dev": "nodemon --exec babel-node --presets @babel/preset-env ./src/server.js",
     "test": "jest"
   },
