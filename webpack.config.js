@@ -1,5 +1,5 @@
 const path = require('path');
-var nodeExternals = require('webpack-node-externals');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/app.js',
@@ -14,8 +14,7 @@ module.exports = {
     rules: [
       {
         use: 'babel-loader',
-        test: /\.js$/,
-        exclude: /node_modules/
+        test: /\.js$/
       }
     ]
   }
