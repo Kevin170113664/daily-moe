@@ -1,9 +1,9 @@
-import fs from 'fs';
+import fs from 'fs'
 import _ from 'lodash'
-import path from 'path';
+import path from 'path'
 import shortid from 'shortid'
 import r from '../helper/request'
-import cinderellaStaticData from '../static/cinderella-spread-cards';
+import cinderellaStaticData from '../static/cinderella-spread-cards'
 
 const baseUrl = 'https://starlight.kirara.ca/api'
 const getImageUrl = id => `https://truecolor.kirara.ca/spread/${id}.png`
@@ -21,7 +21,7 @@ const getSpreadCards = async () => {
   }, {})
 
   if (_.values(spreadPicture).length > _.values(cinderellaStaticData).length) {
-    const staticJSONPath = path.join(__dirname, '../static/cinderella-spread-cards.json');
+    const staticJSONPath = path.join(__dirname, '../static/cinderella-spread-cards.json')
     fs.writeFileSync(staticJSONPath, JSON.stringify(spreadPicture))
   }
 

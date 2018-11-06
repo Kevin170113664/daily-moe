@@ -6,7 +6,7 @@ const router = express.Router()
 router.post('/randomCards', async (req, res, next) => {
   try {
     const {pageSize} = req.query
-    const {existingIds} = req.body;
+    const {existingIds} = req.body
     const result = await publicSrv.getRandomPictures({pageSize, existingIds})
     return res.json(result)
   } catch(e) {

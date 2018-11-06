@@ -33,7 +33,7 @@ const onError = (error) => {
   }
 }
 
-const defaultPort = '3000';
+const defaultPort = '3000'
 const port = normalizePort(process.env.PORT || defaultPort)
 app.set('port', port)
 

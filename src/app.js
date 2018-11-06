@@ -1,5 +1,5 @@
 import path from 'path'
-import '@babel/polyfill';
+import '@babel/polyfill'
 import logger from 'morgan'
 import express from 'express'
 import createError from 'http-errors'
