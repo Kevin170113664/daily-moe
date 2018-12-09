@@ -5,7 +5,11 @@ var _http = _interopRequireDefault(require("http"));
 
 var _app = _interopRequireDefault(require("./app"));
 
+var _dotenv = _interopRequireDefault(require("dotenv"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_dotenv.default.config();
 
 var normalizePort = function normalizePort(val) {
   var port = parseInt(val, 10);

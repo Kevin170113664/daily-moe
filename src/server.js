@@ -2,6 +2,9 @@
 
 import http from 'http'
 import app from './app'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10)
