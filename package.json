@@ -5,6 +5,7 @@
   "scripts": {
     "prestart": "pm2 stop ./dist/server.js",
     "start": "pm2 start ./dist/server.js",
+    "serve": "node ./dist/server.js",
     "build": "babel ./src/server.js -D --out-dir dist && webpack --mode production",
     "dev": "nodemon --exec babel-node --presets @babel/preset-env ./src/server.js",
     "test": "jest"
